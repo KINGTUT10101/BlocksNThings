@@ -5,7 +5,6 @@ local function initTextureIds (textureIds)
     if type (textureIds) == "string" then
         return {
             front = textureIds,
-            back = textureIds,
             top = textureIds,
             bottom = textureIds,
             left = textureIds,
@@ -19,7 +18,6 @@ local function initTextureIds (textureIds)
         -- Make sure all faces are defined
         return {
             front = textureIds.front,
-            back = textureIds.back or textureIds.front,
             top = textureIds.top or textureIds.front,
             bottom = textureIds.bottom or textureIds.front,
             left = textureIds.left or textureIds.front,
