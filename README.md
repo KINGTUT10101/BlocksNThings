@@ -8,6 +8,7 @@ You can sample the module by downloading this repo and running the project from 
 ## Main Features
 - Easily create and render voxel worlds for your games.
 - Supports colored lights, sky lighting, and custom daylight cycles.
+- Uses a custom lighting algorithm which ensures that light cannot "leak" through walls into other rooms.
 - Maps are split into chunks for better performance. Only chunks on the screen are rendered and chunks are only remeshed when needed.
 - Works with G3D, making it very easy to add custom 3D models to a voxel world.
 - Provides a utility for creating billboarded 2D entities.
@@ -19,10 +20,15 @@ You can sample the module by downloading this repo and running the project from 
 - Block defs are not validated by the module. You will need to design systems to create and validate these defs yourself. The block def spec can be found later in this README.
 - You will need to understand how to use the required libraries and modules in order to use BnT.
 
+## Upcoming Features
+- API docs.
+- Transparent block support (currently, all non-air blocks are treated as solid and light cannot pass through them).
+- An open-source environment editor where you can easily create environments with custom blocks and entities.
+
 
 ## Required Libraries and Modules
 BnT requires the following libraries and modules to function. You must install and set these up yourself.
-- [Runtime-TextureAtlas (RTA)](https://github.com/EngineerSmith/Runtime-TextureAtlas) (Texture Atlas used for blocks in chunks)
+- [Runtime-TextureAtlas (RTA)](https://github.com/EngineerSmith/Runtime-TextureAtlas) (Texture atlas used for blocks in chunks)
 - [g3d](https://github.com/groverburger/g3d) (Used for 3D rendering)
 
 [flux](https://github.com/rxi/flux) is also recommended, as it provides tweening functions that are helpful for defining custom daylight cycles.
