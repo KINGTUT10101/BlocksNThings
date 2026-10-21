@@ -406,10 +406,6 @@ function mapMan:isSolidAt (tileX, tileY, layer)
 
     local blockDef = self.grid[tileX][tileY].layers[layer].def
 
-    if blockDef.id == "air" then
-        return false
-    end
-
     return blockDef.type == "solid"
 end
 

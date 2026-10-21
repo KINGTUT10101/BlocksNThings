@@ -2,11 +2,11 @@ local content = {}
 
 local g3d
 
-local validTypes = {
-    solid = true,
-    liquid = true,
-    gas = true,
-}
+-- local validTypes = {
+--     solid = true,
+--     liquid = true,
+--     gas = true,
+-- }
 
 -- local function initTextureDefs (textureIds)
 --     assert (textureIds ~= nil, "Block textures must be provided!")
