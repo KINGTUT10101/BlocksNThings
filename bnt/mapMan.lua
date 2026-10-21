@@ -620,7 +620,9 @@ function mapMan:calcFaces (tileX, tileY, layer)
         back = false,
     }
 
-    if layer == 1 or (layer == 2 and tile.layers[1].def.id == "air") or (layer == 3 and tile.layers[2].def.id == "air") then
+    -- A face is exposed to "front" whenever the layer immediately behind it is empty,
+    -- or the block is on the outermost layer.
+    if layer == 1 or (layer > 1 and tile.layers[layer - 1].def.id == "air") then
         faces.front = true
     end
 
