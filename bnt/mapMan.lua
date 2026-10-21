@@ -36,45 +36,15 @@ local mapMan = {
     timeOfDay = 0, -- Current time of day from 0.0-1.0
     skyColorTimeline = {
         {
-            color = {0.06, 0.09, 0.24},
+            color = {1.0,  0.95, 0.8},
             timestamp = 0.0,
             interFunc = "linear",
-        }, -- Midnight
-        {
-            color = {0.12, 0.18, 0.48},
-            timestamp = 0.24,
-            interFunc = "easeInExpo",
-        }, -- End of night
-        {
-            color = {231/256, 90/256, 8/256},
-            timestamp = 0.25,
-            interFunc = "easeOutExpo",
-        }, -- Sunrise
-        {
-            color = {0.75,  0.7125, 0.6},
-            timestamp = 0.26,
-            interFunc = "linear",
-        }, -- Morning
+        },
         {
             color = {1.0,  0.95, 0.8},
-            timestamp = 0.5,
+            timestamp = 1.0,
             interFunc = "linear",
-        }, -- Noon
-        {
-            color = {0.75,  0.7125, 0.6},
-            timestamp = 0.74,
-            interFunc = "easeInExpo",
-        }, -- Afternoon
-        {
-            color = {231/256, 90/256, 8/256},
-            timestamp = 0.75,
-            interFunc = "easeOutExpo",
-        }, -- Sundown
-        {
-            color = {0.12, 0.18, 0.48},
-            timestamp = 0.76,
-            interFunc = "linear",
-        }, -- Start of night
+        },
     },
     debug = {
         
