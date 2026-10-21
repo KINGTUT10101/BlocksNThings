@@ -406,7 +406,7 @@ function mapMan:isSolidAt (tileX, tileY, layer)
 
     local blockDef = self.grid[tileX][tileY].layers[layer].def
 
-    return blockDef.type == "solid"
+    return blockDef.id ~= "air"
 end
 
 -- Classic "2 sides + corner" AO formula (same one Minecraft uses).
