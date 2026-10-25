@@ -22,7 +22,6 @@ You can sample the module by downloading this repo and running the project from 
 
 ## Upcoming Features
 - API docs.
-- Transparent block support (currently, all non-air blocks are treated as solid and light cannot pass through them).
 - An open-source environment editor where you can easily create environments with custom blocks and entities.
 
 
@@ -142,9 +141,10 @@ This is enough to get your project started. If you follow this guide, you will h
 
 
 ## Block Def Spec
-- **id:** A unique identifier for the block
-- **name:** A human-friendly name for the block
-- **desc:** A short description of the block
+- **id (any):** A unique identifier for the block
+- **name (string):** A human-friendly name for the block
+- **desc (string):** A short description of the block
+- **transparent (boolean):** Determines whether the block is considered transparent which changes how it is rendered
 - **textureIds:** A dictionary of RTA IDs keyed by the block faces (required keys are "front", "back", "left", "right", "top", and "bottom")
 
 

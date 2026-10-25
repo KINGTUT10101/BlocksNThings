@@ -376,7 +376,7 @@ function mapMan:isSolidAt (tileX, tileY, layer)
 
     local blockDef = self.grid[tileX][tileY].layers[layer].def
 
-    return blockDef.id ~= "air"
+    return blockDef.transparent ~= true
 end
 
 -- Classic "2 sides + corner" AO formula (same one Minecraft uses).
@@ -500,6 +500,7 @@ function mapMan:remeshChunk (chunkX, chunkY)
                 local block = tile.layers[layerIndex]
 
                 if block.def.id ~= "air" then
+                    -- Generate active faces if they havent been cached yet.
                     if block.activeFaces == nil then
                         self:calcFaces (i, j, layerIndex)
                     end
@@ -592,19 +593,19 @@ function mapMan:calcFaces (tileX, tileY, layer)
         faces.front = true
     end
 
-    if tileX <= 1 or grid[tileX - 1][tileY].layers[layer].def.id == "air" then
+    if tileX <= 1 or self:isSolidAt(tileX - 1, tileY, layer) ~= true then
         faces.left = true
     end
 
-    if tileX >= self.size.w or grid[tileX + 1][tileY].layers[layer].def.id == "air" then
+    if tileX >= self.size.w or self:isSolidAt(tileX + 1, tileY, layer) ~= true then
         faces.right = true
     end
 
-    if tileY >= self.size.h or grid[tileX][tileY + 1].layers[layer].def.id == "air" then
+    if tileY >= self.size.h or self:isSolidAt(tileX, tileY + 1, layer) ~= true then
         faces.top = true
     end
 
-    if tileY <= 1 or grid[tileX][tileY - 1].layers[layer].def.id == "air" then
+    if tileY <= 1 or self:isSolidAt(tileX, tileY - 1, layer) ~= true then
         faces.bottom = true
     end
 

@@ -32,12 +32,14 @@ local blockDefs = {
         name = "Air",
         desc = "An empty space.",
         textureIds = initTextureIds ("blank"),
+        transparent = true,
     },
     basic = {
         id = "basic",
         name = "Basic Block",
         desc = "A basic block for testing.",
         textureIds = initTextureIds ("basicBlock"),
+        transparent = false,
     },
 }
 
